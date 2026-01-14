@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure File Sharing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>🔐 Secure File Sharing System</h2>
+
+    {% if message %}
+        <p class="msg">{{ message }}</p>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required><br><br>
+        <input type="password" name="password" placeholder="Encryption Password" required><br><br>
+        <button type="submit">Upload & Encrypt</button>
+    </form>
+
+    <h3>Stored Files</h3>
+
+    {% for file in files %}
+    <div class="file-box">
+        <form action="/download/{{ file }}" method="POST">
+            <b>{{ file }}</b><br>
+            <input type="password" name="password" placeholder="Password to Download" required>
+            <button type="submit">Download</button>
+            <a href="/delete/{{ file }}">
+                <button type="button" class="delete">Delete</button>
+            </a>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

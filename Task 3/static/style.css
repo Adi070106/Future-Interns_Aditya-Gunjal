@@ -1,0 +1,122 @@
+/* ===== Base Page Styling ===== */
+body {
+    background: #f4f6f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Main Container ===== */
+.container {
+    width: 700px;
+    max-width: 90%;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+/* ===== Headings ===== */
+h2 {
+    margin-bottom: 25px;
+}
+
+h3 {
+    margin-top: 35px;
+}
+
+/* ===== Inputs ===== */
+input[type="file"],
+input[type="password"] {
+    width: 60%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+/* ===== Buttons ===== */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Delete Button */
+.delete {
+    background: #dc3545;
+}
+
+.delete:hover {
+    background: #b02a37;
+}
+
+/* ===== Messages ===== */
+.msg {
+    color: green;
+    margin-bottom: 15px;
+}
+
+/* ===== Stored File Box ===== */
+.file-box {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Filename */
+.file-box b {
+    display: block;
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+/* ===== Download Section Layout ===== */
+.file-box form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Password Input inside file box */
+.file-box input[type="password"] {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input[type="file"],
+    input[type="password"] {
+        width: 100%;
+    }
+
+    .file-box form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button {
+        width: 100%;
+    }
+}
